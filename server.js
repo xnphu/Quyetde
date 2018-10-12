@@ -43,6 +43,16 @@ app.get('/randomquestion', (req, res) => {
 	}
 });
 
+app.post('/answer', (req, res) => {
+	const { questionid, answer } = req.body;
+	// const questionid = req.body.questionid;
+	// const answer = req.body.answer;
+	let questionList = JSON.parse(fs.readFileSync('./questions.json'));
+	questionList[questionid][answer] += 1;
+	fs.writeFileSync('./questions.json', JSON.stringify(questionList));
+	res.send({ success: 1 });
+});
+
 app.use(express.static('public'));
 
 app.listen(1808, (err) => {

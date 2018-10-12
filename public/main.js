@@ -29,3 +29,20 @@ getRandomQuestion();
 $("#otherQuestion").on("click", function() {
 	getRandomQuestion();
 });
+
+$(".answer_btn").on("click", function() {
+	console.log($(this).data());
+	$.ajax({
+		url: "http://localhost:1808/answer",
+		type: "POST",
+		data: $(this).data(),
+		success: function(response) {
+			if(response.success) {
+				window.location.href = "/";
+			}
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	})
+});
