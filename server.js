@@ -34,6 +34,15 @@ app.post('/createquestion', (req, res) => {
     res.redirect('/answer');
  });
 
+app.get('/randomquestion', (req, res) => {
+	let questionList = JSON.parse(fs.readFileSync('./questions.json'));
+ 	if(questionList.length > 0) {
+		let randomIndex = Math.floor(Math.random()*questionList.length);
+		let questionRandom = questionList[randomIndex];
+		res.send(questionRandom);
+	}
+});
+
 app.use(express.static('public'));
 
 app.listen(1808, (err) => {
