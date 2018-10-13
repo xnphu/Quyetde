@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Đáp gọn</title>
+    <title>Document</title>
 </head>
 <body>
     <nav>
@@ -15,14 +15,19 @@
     </nav>
     <div>
         <h1 id="questionContent"></h1>
-        <button class="answer_btn" data-questionid="" data-answer="yes">Đúng/Có/Phải</button>
-        <button class="answer_btn" data-questionid="" data-answer="no">Sai/Không/Trái</button>
-        <button id="otherQuestion">Xem câu hỏi khác</button>
-        <button id="result"><a href="/result"  >Xem kết quả</a></button>
+        <h3>
+            <span id="total_vote"></span> Vote
+        </h3>
+        <div>
+            vote Yes: <span id="voteYes"></span> %
+        </div>
+        <div>
+            vote No: <span id="voteNo"></span> %
+        </div>
+        <button><a href="/answer">Xem câu hỏi khác</a></button>
     </div>
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<script src="/main.js"></script>
+    <script src="/result.js"></script>
 </body>
 </html>

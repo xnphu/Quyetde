@@ -17,6 +17,10 @@ app.get('/answer', (req, res) => {
     res.sendFile(__dirname + '/public/answer.html')
 });
 
+app.get('/result', (req, res) => {
+    res.sendFile(__dirname + '/public/result.html')
+});
+
 app.post('/createquestion', (req, res) => {
     let questionList = JSON.parse(fs.readFileSync('./questions.json'));
 
@@ -49,9 +53,19 @@ app.post('/answer', (req, res) => {
 	// const answer = req.body.answer;
 	let questionList = JSON.parse(fs.readFileSync('./questions.json'));
 	questionList[questionid][answer] += 1;
-	fs.writeFileSync('./questions.json', JSON.stringify(questionList));
-	res.send({ success: 1 });
+    fs.writeFileSync('./questions.json', JSON.stringify(questionList));
+    res.send({ success: 1 });
 });
+
+app.get('/vote_result', (req, res) => {
+    let questionList = JSON.parse(fs.readFileSync('./questions.json'));
+
+    if(questionList.length > 0) {
+		let randomIndex = Math.floor(Math.random()*questionList.length);
+		let questionRandom = questionList[randomIndex];
+		res.send(questionRandom);
+	}
+})
 
 app.use(express.static('public'));
 

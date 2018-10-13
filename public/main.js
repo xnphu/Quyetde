@@ -46,3 +46,18 @@ $(".answer_btn").on("click", function() {
 		}
 	})
 });
+
+$("#result").on("click", function() {
+	$.ajax({
+		url: "http://localhost:1808/vote_result",
+		type: "GET",
+		success: function(response) {
+			if(response.success) {
+				window.location.href = "/result";
+			}
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});
+});
