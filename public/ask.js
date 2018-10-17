@@ -13,6 +13,6 @@
 const maxLength = 200;
 
 $("#questionContent").on('input', function() {
-            var remainChar = maxLength - $("questionContent").val().length;
-            $("remainChar").text(remainChar);      
+            var remainChar = maxLength - $("#questionContent").val().length;
+            $("#remainChar").text(remainChar);      
 });
