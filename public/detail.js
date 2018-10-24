@@ -19,6 +19,8 @@ const questionId = params[params.length - 1];
 			// } else {
 			// 	return 0;
 			// }
+			document.getElementById("voteYes").style.width = parseFloat(voteYes) + "%"
+			document.getElementById("voteNo").style.width = parseFloat(voteNo) + "%"
 		}
 	},
 	error: function(error) {

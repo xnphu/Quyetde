@@ -1,27 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
     <title>Kết quả</title>
 </head>
-<body>
-    <nav>
-        <ul>
-            <li><a href="/ask">Hỏi nhanh</a></li>
-            <li><a href="/answer">Đáp gọn</a></li>
-        </ul>
-    </nav>
-    <div>
-		<h3 id="questionContent"></h3>
-		<p id="totalVote"><span></span> vote</p>
-		<p id="voteYes">Yes: <span></span>%</p>
-		<p id="voteNo">No: <span></span>%</p>
-		<a href="/"><button>Xem câu hỏi khác</button></a>
-	</div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Quyết.đê!</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/ask">Hỏi nhanh</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/answer">Đáp gọn</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="text-center mt-5" id="questionContent"></h1>
+        <h4 class="text-center mt-5" id="totalVote"><span></span> vote</h4>
+        <div class="progress" style="height: 60px">
+            <div class="progress-bar bg-primary" role="progressbar" id="voteYes">
+                <span></span>%
+            </div>
+            <div class="progress-bar bg-danger" role="progressbar" id="voteNo">
+                <span></span>%
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center mt-5">
+            <a href="/"><button class="btn btn-success">Xem câu hỏi khác</button></a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
     <script src="/detail.js"></script>
 </body>
+
 </html>
